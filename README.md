@@ -78,6 +78,12 @@ Pour tester les requêtes, vous pouvez utiliser les scripts suivants :
 python3 to_json.py
 ```
 
+> Diviser les données en deux parties
+
+```bash
+python3 divide_data.py
+```
+
 > Insérer les données JSON dans Redis et MongoDB
 
 ```bash
@@ -90,4 +96,11 @@ python3 mongo/insert_to_mongo.py
 ```bash
 python3 redis/request_redis.py
 python3 mongo/request_mongo.py
+```
+
+> Jointure avec Redis et MongoDB
+
+```bash
+python3 redis/jointure_redis.py
+python3 mongo/jointure_mongo.py
 ```
