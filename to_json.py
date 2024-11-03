@@ -1,4 +1,4 @@
-from pandas import read_csv, merge
+from pandas import read_csv, merge # type: ignore
 from json import dump
 
 # Fonction pour charger un fichier TXT en DataFrame pandas
