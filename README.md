@@ -67,3 +67,27 @@ docker exec -it bdd_mongo_1 mongosh
 ```
 
 Vous pouvez maintenant utiliser les commandes MongoDB.
+
+## Test des Requetes
+
+Pour tester les requêtes, vous pouvez utiliser les scripts suivants :
+
+> Convertir les fichiers TXT en JSON
+
+```bash
+python3 to_json.py
+```
+
+> Insérer les données JSON dans Redis et MongoDB
+
+```bash
+python3 redis/insert_to_redis.py
+python3 mongo/insert_to_mongo.py
+```
+
+> Tester les requêtes avec Redis et MongoDB
+
+```bash
+python3 redis/request_redis.py
+python3 mongo/request_mongo.py
+```

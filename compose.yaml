@@ -13,26 +13,20 @@ services:
       timeout: 5s
       retries: 5
       start_period: 5s
-    networks:
-      - bdd
       
   redis:
-    image: redis:latest
+    image: redis/redis-stack-server
     restart: always
     ports:
       - 6379:6379
     volumes:
       - ./.docker-data/redis-data:/data
-      - ./.docker/redis.conf:/usr/local/etc/redis/redis.conf
-    command: redis-server /usr/local/etc/redis/redis.conf
     healthcheck:
       test: redis-cli ping
       interval: 5s
       timeout: 5s
       retries: 5
       start_period: 5s
-    networks:
-      - bdd
       
 volumes:
   mongo-data:
