@@ -1,7 +1,10 @@
-from pymongo import MongoClient # type: ignore
+import sys, os
 
-# Connexion à MongoDB
-client = MongoClient("mongodb://localhost:27017/")
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from config.connectionMongo import connect_mongodb
+
+client = connect_mongodb()
 
 # Nom de la base de données
 db = client["FlightDB"]  

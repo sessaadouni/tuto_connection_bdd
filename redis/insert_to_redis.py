@@ -1,10 +1,15 @@
 import json
-from redis import Redis
+import sys, os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from config.connectionRedis import connect_redis
 
 # Charger le fichier JSON pour l'utiliser avec Redis
 with open("./db/json/data_final.json", "r") as f: data_json = json.load(f)
 
-r = Redis(host="localhost", port=6379, db=0, decode_responses=True)
+# connexion à redis et mongo
+r = connect_redis()
 
 # Insérer chaque vol dans Redis en tant que document JSON unique
 for num_vol, vol_data in data_json.items():

@@ -53,7 +53,7 @@ bdd_mongo_1   docker-entrypoint.sh mongod   Up      0.0.0.0:27017->27017/tcp
 Pour accéder à Redis depuis votre terminal, utilisez la commande suivante :
 
 ```bash
-docker exec -it bdd_redis_1 redis-cli
+docker exec -it bdd-redis-1 redis-cli
 ```
 
 Vous pouvez maintenant utiliser les commandes Redis.
@@ -63,7 +63,7 @@ Vous pouvez maintenant utiliser les commandes Redis.
 Pour accéder à MongoDB depuis votre terminal, utilisez la commande suivante :
 
 ```bash
-docker exec -it bdd_mongo_1 mongosh
+docker exec -it bdd-mongo-1 mongosh
 ```
 
 Vous pouvez maintenant utiliser les commandes MongoDB.

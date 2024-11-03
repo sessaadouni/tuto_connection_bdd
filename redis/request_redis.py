@@ -1,6 +1,10 @@
-from redis import Redis
+import sys, os
 
-r = Redis(host="localhost", port=6379, db=0, decode_responses=True)
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from config.connectionRedis import connect_redis
+
+r = connect_redis()
 
 # Exemple : Fonction pour lister les villes d'arrivée des vols
 def get_arrival_cities():

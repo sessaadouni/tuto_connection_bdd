@@ -1,11 +1,14 @@
 import json
-from pymongo import MongoClient # type: ignore
+import sys, os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from config.connectionMongo import connect_mongodb
 
 # Charger le fichier JSON pour l'utiliser avec MongoDB
 with open("./db/json/data_final.json", "r") as f: data_json = json.load(f)
 
-# Connexion à MongoDB
-client = MongoClient("mongodb://localhost:27017/")
+client = connect_mongodb()
 
 # Nom de la base de données
 db = client["FlightDB"]  
