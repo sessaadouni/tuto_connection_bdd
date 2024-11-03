@@ -5,8 +5,8 @@ import os
 # Ajouter le chemin du fichier jointure et des autres modules
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from divide_data import divide_data_in_2_parts as divide_data
-from jointure import my_join
+from lib.divide_data import divide_data_in_2_parts as divide_data
+from lib.jointure import my_join
 from config.connectionMongo import connect_mongodb
 
 client = connect_mongodb()
@@ -18,7 +18,6 @@ db = client["FlightDB"]
 collection = db["vols"]  
 
 def parse_mongo_data(raw_data):
-  """Transforme les documents MongoDB en un format de dictionnaire"""
   parsed_data = {}
   for doc in raw_data:
     doc_id = doc.pop("_id")  # Utilise l'ID du document comme clé
